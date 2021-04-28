@@ -5,7 +5,7 @@ Tenha um botão para aumentar este contador em 1
 Tenha um botão para reduzir este contador em 1
 Tenha um botão para resetar para 0
 Obs: o contador nunca pode car negativo! -->
-<ion-header>
+<ion-header class="ion-text-center">
   <ion-toolbar color = "dark">
     <ion-title>
       Contador
@@ -13,7 +13,7 @@ Obs: o contador nunca pode car negativo! -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class=" ion-padding ion-text-center">
+<ion-content class="ion-padding ion-text-center">
   <h1 class="counter"> {{counter}}</h1>
   <h2>Valor máximo {{maxCounter}}</h2>
 
@@ -34,4 +34,40 @@ Obs: o contador nunca pode car negativo! -->
       </ion-button>
     </ion-col>
   </ion-row> 
+
+  <ion-header class = "ion-no-padding">
+    <ion-toolbar color = "dark">
+      <ion-title>
+        Conta Bancária
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+    <h1>Saldo</h1>
+    <h2 class="counter"> {{counter}}</h2>
+
+    <ion-row class = "ion-justify-content-center">
+      <ion-col size = "auto">
+        <ion-button (click)="decrementConta()" color = "danger">
+          Sacar
+        </ion-button>
+      </ion-col>
+      <ion-col size = "auto">
+        <ion-button (click)="resetConta()" color = "primary">
+          Sacar tudo
+        </ion-button>
+      </ion-col>
+      <ion-col size = "auto">
+        <ion-button (click)="incrementConta()" color = "success">
+         Depositar
+        </ion-button>
+      </ion-col>
+    </ion-row> 
+
+  <ion-item>
+    <ion-label position="floating">Valor a ser depositado</ion-label>
+    <ion-input type="number"  [(ngModel)]="selectedValue"></ion-input>
+  </ion-item>
+
+
 </ion-content>
